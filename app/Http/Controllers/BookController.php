@@ -15,6 +15,10 @@ class BookController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'title' => 'required',
+        ]);
+
         $book = new Book();
         $book->title = $request->input('title');
 
