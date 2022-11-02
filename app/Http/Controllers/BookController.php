@@ -14,7 +14,13 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-        //
+
+        $book = new Book();
+        $book->title = $request->input('title');
+
+        $book->save();
+
+        return $book;
     }
 
     public function show(Book $book)
